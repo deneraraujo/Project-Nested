@@ -783,5 +783,111 @@ namespace Project_Nested
         }
 
         #endregion
+
+        #region Batch Convert
+
+        public void BatchConvert(string[] fileList, FrmSaveProgress progress)
+        {
+            CancellationTokenSource ct = new CancellationTokenSource();
+
+            progress.FormClosed += (sender, e) =>
+            {
+                ct.Cancel();
+            };
+
+            int i = 0;
+            for (i = 0; i < fileList.Length; i++)
+            {
+                if (ct.IsCancellationRequested)
+                {
+                    break;
+                }
+
+                filename = fileList[i];
+
+                try
+                {
+                    injector = new Injector(File.ReadAllBytes(filename));
+
+                    if (injector.IsLoaded(true))
+                    {
+                        SelectProfile(ConvertPathToTitle(filename), true);
+                        LoadGlobalSettings();
+                        injector.SetSetting("EmuCalls.AutoPlayThreshold", "0");
+
+                        if (!injector.mapperSupported)
+                        {
+                            throw new Exception($"Mapper {injector.ReadMapper()} isn't supported.");
+                        }
+                        else
+                        {
+                            string fullFileName = $"{filename}.smc";
+                            injector.GameName.SetValue(profileLoaded != null ? profileLoaded : string.Empty);
+                            byte[] data = null;
+
+                            Task.Run(async () =>
+                            {
+                                data = await injector.FinalChanges(ct.Token, null);
+                            }).Wait();
+
+                            File.WriteAllBytes(fullFileName, data);
+                            progress.Report(new Tuple<string, int, int>($"[Success] {Path.GetFileName(filename)}", i + 1, fileList.Length));
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Can't load injector.");
+                    }
+                }
+                catch
+                {
+                    progress?.Report(new Tuple<string, int, int>($"[Error] {Path.GetFileName(filename)}", i + 1, fileList.Length));
+                }
+            }
+
+            if (i == fileList.Length)
+                MessageBox.Show("Saving done!");
+            else
+                MessageBox.Show("Saving canceled.");
+			
+			progress.Report(new Tuple<string, int, int>(null, 0, 0));
+        }
+
+        private void batchConvertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CancellationTokenSource ct = new CancellationTokenSource();
+            FrmSaveProgress progress = null;
+            Task.Run(() =>
+               {
+                   progress = new FrmSaveProgress(ct);
+                   progress.ShowDialog();
+               });
+
+            using (var fbd = new FolderBrowserDialog())
+            {
+                fbd.Description = "Select a folder containing \".nes\" files.";
+                fbd.SelectedPath = Properties.Settings.Default.NesPath;
+                DialogResult result = fbd.ShowDialog();
+
+                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                {
+                    // Save path
+                    Properties.Settings.Default.NesPath = fbd.SelectedPath;
+                    Properties.Settings.Default.Save();
+                    SaveGlobalSettings();
+
+                    // Select files
+                    string[] files = Directory.GetFiles(fbd.SelectedPath, "*.nes");
+
+                    // Start proccess
+                    BatchConvert(files, progress);
+                }
+                else
+                {
+                    progress.Report(new Tuple<string, int, int>(null, 0, 0));
+                }
+            }
+        }
+        #endregion
     }
 }

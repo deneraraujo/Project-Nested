@@ -60,7 +60,7 @@ namespace Project_Nested
                 {
                     if (progressMax > 0)
                     {
-                        label1.Text = $"{progressName}: {progressMin}/{progressMax}";
+                        label1.Text = $"{progressName}";
                         progressBar1.Maximum = progressMax;
                         progressBar1.Value = progressMin;
                     }
