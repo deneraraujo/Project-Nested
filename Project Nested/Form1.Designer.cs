@@ -47,10 +47,12 @@
             this.openNesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveSnesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveSnesPlayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.loadSRMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.reloadBothROMsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.batchConvertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +61,7 @@
             this.pasteSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutProjectNestedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -67,7 +69,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(12, 114);
+            this.btnOpen.Location = new System.Drawing.Point(12, 177);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 0;
@@ -77,7 +79,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 143);
+            this.btnSave.Location = new System.Drawing.Point(12, 206);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
@@ -88,7 +90,7 @@
             // lblMapper
             // 
             this.lblMapper.AutoSize = true;
-            this.lblMapper.Location = new System.Drawing.Point(12, 198);
+            this.lblMapper.Location = new System.Drawing.Point(12, 261);
             this.lblMapper.Name = "lblMapper";
             this.lblMapper.Size = new System.Drawing.Size(74, 52);
             this.lblMapper.TabIndex = 3;
@@ -100,9 +102,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.panel);
-            this.groupBox1.Location = new System.Drawing.Point(93, 126);
+            this.groupBox1.Location = new System.Drawing.Point(93, 189);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 301);
+            this.groupBox1.Size = new System.Drawing.Size(391, 238);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Advanced settings";
@@ -113,14 +115,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel.AutoScroll = true;
-            this.panel.Location = new System.Drawing.Point(0, 19);
+            this.panel.Location = new System.Drawing.Point(6, 19);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(234, 151);
+            this.panel.Size = new System.Drawing.Size(379, 213);
             this.panel.TabIndex = 10;
             // 
             // btnLoadSrm
             // 
-            this.btnLoadSrm.Location = new System.Drawing.Point(12, 253);
+            this.btnLoadSrm.Location = new System.Drawing.Point(12, 316);
             this.btnLoadSrm.Name = "btnLoadSrm";
             this.btnLoadSrm.Size = new System.Drawing.Size(75, 23);
             this.btnLoadSrm.TabIndex = 3;
@@ -130,10 +132,9 @@
             // 
             // comboGameProfile
             // 
-            this.comboGameProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboGameProfile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboGameProfile.FormattingEnabled = true;
-            this.comboGameProfile.Location = new System.Drawing.Point(177, 107);
+            this.comboGameProfile.Location = new System.Drawing.Point(177, 170);
             this.comboGameProfile.Name = "comboGameProfile";
             this.comboGameProfile.Size = new System.Drawing.Size(226, 21);
             this.comboGameProfile.TabIndex = 8;
@@ -141,9 +142,8 @@
             // 
             // lblGameProfile
             // 
-            this.lblGameProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGameProfile.AutoSize = true;
-            this.lblGameProfile.Location = new System.Drawing.Point(102, 110);
+            this.lblGameProfile.Location = new System.Drawing.Point(102, 173);
             this.lblGameProfile.Name = "lblGameProfile";
             this.lblGameProfile.Size = new System.Drawing.Size(69, 13);
             this.lblGameProfile.TabIndex = 7;
@@ -152,8 +152,7 @@
             // 
             // btnSaveProfile
             // 
-            this.btnSaveProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveProfile.Location = new System.Drawing.Point(409, 105);
+            this.btnSaveProfile.Location = new System.Drawing.Point(409, 168);
             this.btnSaveProfile.Name = "btnSaveProfile";
             this.btnSaveProfile.Size = new System.Drawing.Size(75, 23);
             this.btnSaveProfile.TabIndex = 9;
@@ -166,14 +165,14 @@
             this.lblInstructions.AutoSize = true;
             this.lblInstructions.Location = new System.Drawing.Point(12, 24);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(453, 78);
+            this.lblInstructions.Size = new System.Drawing.Size(453, 130);
             this.lblInstructions.TabIndex = 9;
             this.lblInstructions.Text = resources.GetString("lblInstructions.Text");
             // 
             // lblKnownCalls
             // 
             this.lblKnownCalls.AutoSize = true;
-            this.lblKnownCalls.Location = new System.Drawing.Point(9, 279);
+            this.lblKnownCalls.Location = new System.Drawing.Point(12, 342);
             this.lblKnownCalls.Name = "lblKnownCalls";
             this.lblKnownCalls.Size = new System.Drawing.Size(72, 13);
             this.lblKnownCalls.TabIndex = 10;
@@ -182,7 +181,7 @@
             // btnCompatibility
             // 
             this.btnCompatibility.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCompatibility.Location = new System.Drawing.Point(12, 404);
+            this.btnCompatibility.Location = new System.Drawing.Point(11, 404);
             this.btnCompatibility.Name = "btnCompatibility";
             this.btnCompatibility.Size = new System.Drawing.Size(75, 23);
             this.btnCompatibility.TabIndex = 5;
@@ -192,7 +191,7 @@
             // 
             // btnSaveAndPlay
             // 
-            this.btnSaveAndPlay.Location = new System.Drawing.Point(12, 172);
+            this.btnSaveAndPlay.Location = new System.Drawing.Point(12, 235);
             this.btnSaveAndPlay.Name = "btnSaveAndPlay";
             this.btnSaveAndPlay.Size = new System.Drawing.Size(75, 23);
             this.btnSaveAndPlay.TabIndex = 2;
@@ -218,10 +217,12 @@
             this.openNesToolStripMenuItem,
             this.saveSnesToolStripMenuItem,
             this.saveSnesPlayToolStripMenuItem,
-            this.toolStripMenuItem2,
+            this.toolStripMenuItem1,
             this.loadSRMToolStripMenuItem,
-            this.toolStripMenuItem3,
+            this.toolStripMenuItem2,
             this.reloadBothROMsToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.batchConvertToolStripMenuItem,
             this.toolStripMenuItem4,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -252,10 +253,10 @@
             this.saveSnesPlayToolStripMenuItem.Text = "Save Snes & Play";
             this.saveSnesPlayToolStripMenuItem.Click += new System.EventHandler(this.saveSnesPlayToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem2
+            // toolStripMenuItem1
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(189, 6);
             // 
             // loadSRMToolStripMenuItem
             // 
@@ -265,10 +266,10 @@
             this.loadSRMToolStripMenuItem.Text = "Load Srm";
             this.loadSRMToolStripMenuItem.Click += new System.EventHandler(this.loadSRMToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem3
+            // toolStripMenuItem2
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(189, 6);
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(189, 6);
             // 
             // reloadBothROMsToolStripMenuItem
             // 
@@ -277,6 +278,19 @@
             this.reloadBothROMsToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.reloadBothROMsToolStripMenuItem.Text = "Reload Both ROMs";
             this.reloadBothROMsToolStripMenuItem.Click += new System.EventHandler(this.reloadBothROMsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(189, 6);
+            // 
+            // batchConvertToolStripMenuItem
+            // 
+            this.batchConvertToolStripMenuItem.Name = "batchConvertToolStripMenuItem";
+            this.batchConvertToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            this.batchConvertToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.batchConvertToolStripMenuItem.Text = "Convert Batch";
+            this.batchConvertToolStripMenuItem.Click += new System.EventHandler(this.batchConvertToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -331,7 +345,7 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sendFeedbackToolStripMenuItem,
-            this.toolStripMenuItem1,
+            this.toolStripMenuItem5,
             this.aboutProjectNestedToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -344,10 +358,10 @@
             this.sendFeedbackToolStripMenuItem.Text = "Send Feedback";
             this.sendFeedbackToolStripMenuItem.Click += new System.EventHandler(this.sendFeedbackToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
+            // toolStripMenuItem5
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 6);
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(184, 6);
             // 
             // aboutProjectNestedToolStripMenuItem
             // 
@@ -413,14 +427,16 @@
         private System.Windows.Forms.ToolStripMenuItem pasteSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendFeedbackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem aboutProjectNestedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem loadSRMToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem reloadBothROMsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem batchConvertToolStripMenuItem;
     }
 }
 
